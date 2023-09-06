@@ -1,3 +1,5 @@
+//Crie um programa que receba 2 números e imprima na tela.
+
 package aula00.exercicio02;
 
 import java.util.Scanner;

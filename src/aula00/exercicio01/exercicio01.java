@@ -1,3 +1,5 @@
+// Crie um programa que leia seu nome e imprima na tela.
+
 package aula00.exercicio01;
 
 import java.util.Scanner;
