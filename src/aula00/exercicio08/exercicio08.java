@@ -14,11 +14,13 @@ public class exercicio08 {
 
 
         do {
-            System.out.println("1 - Gestante:");
-            System.out.println("2 - Idosa:");
-            System.out.println("3 - Deficiente:");
-            System.out.println("4 - Nenhuma das alterlativas:");
-            System.out.println("Selecione uma opcao dentre 1 e 4:");
+            System.out.println("""
+                1 - Gestante
+                2 - Idosa
+                3 - Deficiente
+                4 - Nenhuma das alternativas
+                Escolha uma opcao: 
+                """);
             opcao = input.nextInt();
         } while (opcao < 1 || opcao > 4);
 

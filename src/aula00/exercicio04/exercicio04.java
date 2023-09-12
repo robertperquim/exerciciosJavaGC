@@ -7,10 +7,13 @@ public class exercicio04 {
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
-        double salarioMinimo = 1320.00;
+        double salarioMinimo = 1320.00, salarioPessoa;
 
-        System.out.println("Informe o seu salario: ");
-        double salarioPessoa = input.nextInt();
+
+        do {
+            System.out.println("Informe o seu salario: ");
+            salarioPessoa = input.nextInt();
+        } while (salarioPessoa < 0);
 
         System.out.printf("\nVoce possui %.2f salarios minimos considerando o valor do salario minimo de %.2f", (salarioPessoa/salarioMinimo), salarioMinimo);
 

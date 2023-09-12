@@ -15,9 +15,12 @@ public class exercicio12 {
         double dolares, cambio;
 
         do {
-            System.out.println("1 - Converter para real: ");
-            System.out.println("2 - Converter para euro: ");
-            System.out.println("Escolha uma opcao com 1 ou 2:  ");
+            System.out.println("""
+                        1 - Converter para real:
+                        2 - Converter para euro:
+                        Escolha uma opcao:
+                        """);
+
             opcao = input.nextInt();
         } while (opcao < 1 || opcao > 2);
 
