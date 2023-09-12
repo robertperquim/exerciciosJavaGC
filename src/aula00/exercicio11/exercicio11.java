@@ -11,15 +11,14 @@ import java.util.regex.Pattern;
 public class exercicio11 {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int contadorVogais = 0;
         String frase;
 
         System.out.print("Digite uma palavra ou frase: ");
 
-        frase = scanner.nextLine();
+        frase = input.nextLine();
 
-        scanner.close();
 
         Pattern vogais = Pattern.compile("[aeiouAEIOU]");
         Matcher procura = vogais.matcher(frase);
