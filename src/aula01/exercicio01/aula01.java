@@ -1,7 +1,7 @@
 /*crie um programa que determine e escreva os
  números primos compreendidos entre um intervalo fornecido pelo usuário.*/
 
-package aula01;
+package aula01.exercicio01;
 
 import java.util.Scanner;
 
@@ -32,7 +32,7 @@ public class aula01 {
 
                 if (i % j == 0) {
                     flag = 1;
-                    break;
+                    j = i;
                 }
             }
 
