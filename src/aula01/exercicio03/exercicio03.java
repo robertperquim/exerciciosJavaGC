@@ -32,6 +32,5 @@ public class exercicio03 {
             System.out.println("Voce tem direito a fila prioritaria");
         }
 
-
     }
 }
