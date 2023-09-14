@@ -5,13 +5,14 @@ package aula01.exercicio01;
 
 import java.util.Scanner;
 
-public class aula01 {
+public class exercicio01 {
 
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        int intervaloMin, intervaloMax, flag = 0;
+        int intervaloMin, intervaloMax;
+
 
         do {
             System.out.println("Informe o inicio do seu intervalo: ");
@@ -23,25 +24,28 @@ public class aula01 {
             intervaloMax = input.nextInt();
         } while (intervaloMax < 2 || intervaloMin > intervaloMax);
 
+        input.close();
+
         System.out.println("Numeros primos dentre " + intervaloMin + " a " + intervaloMax + ":");
 
         for (int i = intervaloMin; i <= intervaloMax; i++) {
 
+            boolean primo = true;
 
             for (int j = 2; j < i ; j++) {
 
+
                 if (i % j == 0) {
-                    flag = 1;
+                    primo = false;
                     j = i;
                 }
             }
 
-            if (flag == 0){
+            if (primo){
                 System.out.printf(" [%d] ", i);
-            }else{
-                flag = 0;
             }
         }
+
 
     }
 
