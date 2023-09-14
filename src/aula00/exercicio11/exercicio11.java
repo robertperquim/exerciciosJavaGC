@@ -29,5 +29,7 @@ public class exercicio11 {
         }
 
         System.out.println("O número de vogais na palavra ou frase é: " + contadorVogais);
+
+        input.close();
     }
 }

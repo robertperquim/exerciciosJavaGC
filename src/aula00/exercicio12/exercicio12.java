@@ -42,12 +42,7 @@ public class exercicio12 {
             System.out.printf("\n $%.2f para € fica €%.2f", dolares, (dolares * cambio));
         }
 
-
-
-
-
-
-
+        input.close();
 
     }
 }

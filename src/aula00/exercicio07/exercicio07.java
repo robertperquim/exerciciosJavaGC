@@ -33,7 +33,7 @@ public class exercicio07 {
         }else{
             System.out.println("Sinto Muito! voce nao pode comprar um carro conosco sendo menor de idade");
         }
-
+        input.close();
 
     }
 }

@@ -15,6 +15,8 @@ public class exercicio10 {
         System.out.println("Informe a temperatura em graus Celcius: ");
         temperatura = input.nextDouble();
 
+        input.close();
+
         conversao = (temperatura * 9/5) + 32;
 
         System.out.println("A temperatura em Fahrenheit e " + conversao);

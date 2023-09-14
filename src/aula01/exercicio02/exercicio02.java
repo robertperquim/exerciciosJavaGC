@@ -23,6 +23,8 @@ public class exercicio02 {
                 salario = input.nextDouble();
             } while (salario <= 0);
 
+            input.close();
+
             if (salario > 2000){
                 System.out.println("Voce pode comprar um carro com a gente!!");
             }else{

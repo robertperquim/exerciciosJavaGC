@@ -19,6 +19,8 @@ public class exercicio06 {
             idade = input.nextInt();
         } while (idade <= 0 || idade >= 120);
 
+        input.close();
+
         if (idade < 16) {
             System.out.println("Voce nao pode votar!!");
         } else if (idade == 16 || idade == 17) {

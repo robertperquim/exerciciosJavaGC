@@ -24,6 +24,8 @@ public class exercicio08 {
             opcao = input.nextInt();
         } while (opcao < 1 || opcao > 4);
 
+        input.close();
+
         if (opcao == 4 ) {
 
             System.out.println("Voce nao tem direito a fila prioritária:");

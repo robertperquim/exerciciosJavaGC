@@ -29,6 +29,7 @@ public class exercicio13 {
 
         System.out.println("O fatoriar de " + numero + " e " + fatorial );
 
+        input.close();
 
     }
 }

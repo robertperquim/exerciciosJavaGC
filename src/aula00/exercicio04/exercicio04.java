@@ -15,6 +15,8 @@ public class exercicio04 {
             salarioPessoa = input.nextInt();
         } while (salarioPessoa < 0);
 
+        input.close();
+
         System.out.printf("\nVoce possui %.2f salarios minimos considerando o valor do salario minimo de %.2f", (salarioPessoa/salarioMinimo), salarioMinimo);
 
 

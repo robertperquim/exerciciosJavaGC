@@ -17,6 +17,8 @@ public class exercicio03 {
         System.out.println("Informe o terceiro numero:" );
         int number3 = input.nextInt();
 
+        input.close();
+
         int maior = number1, menor = number1;
 
         if (number2 > maior){

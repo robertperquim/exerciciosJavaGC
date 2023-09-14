@@ -18,7 +18,7 @@ public class exercicio09 {
             anoNascimento = input.nextInt();
         } while (anoNascimento > anoReferencia);
 
-
+        input.close();
 
         System.out.println("Voce tem " + (anoReferencia - anoNascimento) + " anos!");
 

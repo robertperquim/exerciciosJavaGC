@@ -66,7 +66,8 @@ public class exercicio04 {
                         """);
                 continuar = input.nextLine().toLowerCase();
             } while (!continuar.equals("n") && !continuar.equals("s"));
-
         }
+
+        input.close();
     }
 }

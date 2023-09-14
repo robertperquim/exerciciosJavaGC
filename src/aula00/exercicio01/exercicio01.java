@@ -12,5 +12,6 @@ public class exercicio01 {
         System.out.println("Informe seu nome: ");
         String nome = input.nextLine();
         System.out.println("O nome digitado e : " + nome);
+        input.close();
     }
 }

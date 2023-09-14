@@ -13,5 +13,6 @@ public class exercicio02 {
         System.out.println("Informe o segundo numero:" );
         int number2 = input.nextInt();
         System.out.println("Os numeros digitados foram:" + number2 + " e " + number1 );
+        input.close();
     }
 }

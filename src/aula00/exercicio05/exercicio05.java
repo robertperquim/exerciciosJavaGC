@@ -24,6 +24,8 @@ public class exercicio05 {
             segundos = input.nextInt();
         } while (segundos < 0 || segundos > 59);
 
+        input.close();
+
         segundosTotais = (hora * 3600) + (minutos * 60) + segundos;
 
         segundosAteMeiaNoite = (24 * 3600) - segundosTotais;
