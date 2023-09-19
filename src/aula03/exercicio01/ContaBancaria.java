@@ -1,67 +1,106 @@
 package aula03.exercicio01;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class ContaBancaria {
 
-
-    private String nome;
-    private String cpf;
-    private int identificadorDaconta;
+    private Cliente titular;
+    private int identificadorDaconta = 0;
     private String banco;
-    private String enderecoDoTitular;
-    private double saldo;
+    private double saldo = 0;
     private LocalTime horarioLocal;
+    private LocalDate dataAtual;
     private ArrayList<String> historico = new ArrayList<>();
 
-    private int idTracansacao;
+    private boolean contaAtiva = true;
 
+    private static int proximoIdentificador = 0;
 
-    public ContaBancaria(String nome, String cpf, int identificadorDaconta, String banco, String enderecoDoTitular, double saldo) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.identificadorDaconta = identificadorDaconta;
+    public ContaBancaria(String banco) {
+        this.identificadorDaconta = proximoIdentificador++;
         this.banco = banco;
-        this.enderecoDoTitular = enderecoDoTitular;
-        this.saldo = saldo;
 
     }
 
-    public void saque(double valor) {
-        if (valor <= this.saldo) {
+    public void setTitular(Cliente titular) {this.titular = titular;}
+
+
+    public Cliente getTitular() {return titular;}
+
+    public void setHorarioLocal() {
+        this.horarioLocal = LocalTime.now();
+    }
+
+    public int getIdentificadorDaconta() {
+        return identificadorDaconta;
+    }
+
+    public String getBanco() {
+        return banco;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public LocalTime getHorarioLocal() {
+        setHorarioLocal();
+        return horarioLocal.withNano(0) ;
+    }
+
+    public void getHistorico(){
+        for (String transacao : historico){
+            System.out.println(transacao);
+        }
+    }
+
+
+    public boolean saque(double valor) {
+        if (valor <= this.saldo && contaAtiva) {
             this.saldo = saldo - valor;
-            idTracansacao = 1;
+            registrarTransacao("Saque ", valor);
+            return true;
         } else {
-            System.out.println("Saldo não disponivel para o valor solicitado");
+            return false;
         }
 
     }
 
-    public void deposito(double valor) {
-        this.saldo = saldo + valor;
-        historico.add("Deposito  no valor de " + valor );
+    public boolean deposito(double valor) {
+        if (contaAtiva) {
+            this.saldo = saldo + valor;
+            registrarTransacao("Deposito ",valor);
+            return true;
+        }
+        return false;
     }
 
-    public void pix(int valor, ContaBancaria destino) {
+    public boolean pix(int valor, ContaBancaria destino) {
 
-        if (valor <= this.saldo && (validaHora())) {
+        if (valor <= this.saldo && (validaHora()) && contaAtiva) {
             this.saldo = saldo - valor;
             destino.saldo = destino.saldo + valor;
-            System.out.println("Transacao efetuada com sucesso!!");
+            registrarTransacao("Pix efetuado para " + destino.getTitular().getNome(), valor);
+            destino.registrarTransacao("Pix recebido de " + getTitular().getNome(), valor);
+            return true;
+
         } else {
-            System.out.println("nao foi");
+            return false;
         }
     }
 
-    public void transferencia(ContaBancaria destino, double valor){
+    public boolean transferencia(ContaBancaria destino, double valor){
 
-        if (valor <= this.saldo && (validaHora())) {
+        if (valor <= this.saldo && (validaHora()) && contaAtiva) {
             this.saldo = saldo - valor;
             destino.saldo = destino.saldo + valor;
-            System.out.println("Transacao efetuada com sucesso!!");
+            registrarTransacao("Transferencia efetuada para " + destino.titular.getNome(), valor);
+            destino.registrarTransacao("Tranferencia recebida de " + titular.getNome(), valor);
+            return true;
         } else {
-            System.out.println("Nao foi possivel fazer a transacao");
+            return false;
         }
     }
 
@@ -78,77 +117,42 @@ public class ContaBancaria {
     }
 
     public void getInformacoes(){
-        System.out.println(getNome());
-        System.out.println(getEnderecoDoTitular());
-        System.out.println(getIdentificadorDaconta());
-        System.out.println(getBanco());
-        System.out.println(getSaldo());
-        System.out.println(getHorarioLocal());
+        System.out.println("Nome: " + titular.getNome());
+        System.out.println("Endereço: " + titular.getEnderecoTitular());
+        System.out.println("Indentificador da conta: " + getIdentificadorDaconta());
+        System.out.println("Banco: " + getBanco());
+        System.out.println("Saldo: " + getSaldo());
+        System.out.println("Horario: " + getHorarioLocal());
     }
 
-    public double GetSaldo() {
-        return this.saldo;
-    }
+    public void registrarTransacao(String descricao, double valor){
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public int getIdentificadorDaconta() {
-        return identificadorDaconta;
-    }
-
-    public void setIdentificadorDaconta(int identificadorDaconta) {
-        this.identificadorDaconta = identificadorDaconta;
-    }
-
-    public String getEnderecoDoTitular() {
-        return enderecoDoTitular;
-    }
-
-    public void setEnderecoDoTitular(String enderecoDoTitular) {
-        this.enderecoDoTitular = enderecoDoTitular;
-    }
-
-    public String getBanco() {
-        return banco;
-    }
-
-    public void setBanco(String banco) {
-        this.banco = banco;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-
+        historico.add(descricao + " | Valor: " + valor);
 
     }
 
-    public LocalTime getHorarioLocal() {
-        setHorarioLocal();
-        return horarioLocal ;
+    public void alterarEndereco(String novoEndereco){ titular.setEnderecoTitular(novoEndereco);}
+
+    public void taxadeManutencao(){ //ver com o sor como fazer para o metodo ser chamado automaticamente!
+        dataAtual = LocalDate.now();
+        if (dataAtual.getDayOfMonth() == 1){
+            this.saldo = saldo - 10;
+        }
+    }
+    public void jurosSobreoSaldo(){ //ver com o sor como fazer para o metodo ser chamado automaticamente!
+        dataAtual = LocalDate.now();
+        if (dataAtual.getDayOfMonth() == 1){
+            this.saldo = saldo + (saldo * 0.0008);
+        }
     }
 
-    public void setHorarioLocal() {
-        this.horarioLocal = LocalTime.now();
+    public void encerrarConta(){
+        contaAtiva = false;
+        saldo = 0;
     }
+
 }
+
+
 
 
