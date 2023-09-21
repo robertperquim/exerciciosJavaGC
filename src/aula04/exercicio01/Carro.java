@@ -1,7 +1,7 @@
 package aula04.exercicio01;
 
-public class carro extends Veiculo {
-    public carro(String marca, String modelo, int ano) {
+public class Carro extends Veiculo {
+    public Carro(String marca, String modelo, int ano) {
         super(marca, modelo, ano);
     }
 
