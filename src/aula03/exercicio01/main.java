@@ -6,6 +6,8 @@ import aula03.exercicio01.ContaBancaria;
 public class main {
     public static void main(String[] args) {
 
+        //Metodos estaao prontos fazer apenas uma interface melhor com menu...
+
         ContaBancaria conta01 = new ContaBancaria("NUBANK");
         ContaBancaria conta02 = new ContaBancaria("Itau");
         if (VerificaCpf.validarCpf("05270207028")) {
