@@ -31,8 +31,9 @@ public class ListaDeTarefas {
             case 4 -> System.out.println("Fechadno o Programa");
         }
 
-        scanner.close();
+
     }
+        scanner.close();
     }
 
     private static void adicionarTarefa(List<Tarefa> listaTarefas, Scanner scanner){

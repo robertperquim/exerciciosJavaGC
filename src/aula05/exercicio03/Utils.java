@@ -7,7 +7,7 @@ public class Utils {
 
         int indice;
         do {
-            System.out.println("Informe o indice da tareafa que deseja remover de 0 a " + (listaTarefas.size() - 1));
+            System.out.println("Informe o indice da tarefa que deseja remover de 0 a " + (listaTarefas.size() - 1));
             indice = scanner.nextInt();
         }while (indice < 0 || indice >= listaTarefas.size());
 
