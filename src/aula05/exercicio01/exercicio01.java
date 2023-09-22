@@ -24,5 +24,7 @@ public class exercicio01 {
         System.out.println("A soma dos numeros e " + soma);
         System.out.println("A media dos numeros e " + (soma/array.length));
 
+        scanner.close();
+
     }
 }
