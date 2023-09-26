@@ -6,9 +6,6 @@ Stack para armazenar objetos da classe Livros. Implemente a classe Livro,
 
 package aula06.exercicio01;
 
-
-import aula05.exercicio06.Reserva;
-
 import java.util.*;
 
 public class exercicio01 {
@@ -61,7 +58,7 @@ public class exercicio01 {
             for (String categoriaAtual : categorias) {
                 System.out.println("livros da categoria: " + categoriaAtual);
                 for (Livro livro: pilhaLivros) {
-                    if (Objects.equals(livro.getCategora(), categoriaAtual)){
+                    if (Objects.equals(livro.getCategora(), categoriaAtual)){ /// equal na class
                         System.out.println(livro.getNome());
                     }
                 }
