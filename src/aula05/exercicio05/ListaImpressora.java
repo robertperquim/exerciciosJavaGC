@@ -45,7 +45,7 @@ public class ListaImpressora {
     }
     private static void Imprime(LinkedList<Impressora> listaImpressoras){
         while (!listaImpressoras.isEmpty()){
-            System.out.println("Imprimindo -> " + listaImpressoras.get(0).getNome() + " Paginas " + listaImpressoras.get(0).getPaginas());
+            System.out.println("Imprimindo -> " + listaImpressoras.getFirst().getNome() + " Paginas " + listaImpressoras.getFirst().getPaginas());
             listaImpressoras.removeFirst();
 
         }
