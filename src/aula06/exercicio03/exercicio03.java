@@ -56,14 +56,11 @@ public class exercicio03 {
     }
 
     private static void Nomes(TreeMap<Contato, String> contatos){
-                contatos.forEach((contato, telefone) -> {
-                    System.out.println("Contato: " + contato.getNome() + " Numero " + telefone);});
+                contatos.forEach((contato, telefone) -> System.out.println("Contato: " + contato.getNome() + " Numero " + telefone));
     }
     private static void contatoPorLocal(TreeMap<Contato, String> contatos, TreeMap<Contato, String> contatosLocalidade){
        listaDeContaosPorLocalidade(contatos,contatosLocalidade);
-       contatosLocalidade.forEach((contato, numero) -> {
-           System.out.println(contato.getLocal() + " --> " + " Contato: " + contato.getNome() + "Numero: " + numero);
-       });
+       contatosLocalidade.forEach((contato, numero) -> System.out.println(contato.getLocal() + " --> " + " Contato: " + contato.getNome() + "Numero: " + numero));
     }
     
     private static void listaDeContaosPorLocalidade(TreeMap<Contato, String> contatos, TreeMap<Contato, String> contatosLocalidade){
