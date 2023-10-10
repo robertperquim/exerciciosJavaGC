@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculaTributosTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-10-10T05:09:32" hostname="PERQUIM" time="0.024">
+  <properties/>
+  <testcase name="Calcula Tributos test" classname="CalculaTributosTest" time="0.015"/>
+  <testcase name="Calcula Prestacao Sem Juros" classname="CalculaTributosTest" time="0.001"/>
+  <testcase name="Calcula juros de cada mes test" classname="CalculaTributosTest" time="0.001"/>
+  <testcase name="Calcula Meses test" classname="CalculaTributosTest" time="0.001"/>
+  <testcase name="Calcula Juros por Mes test" classname="CalculaTributosTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
