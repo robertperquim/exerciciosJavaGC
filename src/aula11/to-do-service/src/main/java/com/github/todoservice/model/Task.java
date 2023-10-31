@@ -1,19 +1,20 @@
 package com.github.todoservice.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Getter
-@ToString
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Task {
 
-    private int id;
+
+    private Long id;
     private String descricao;
-    private Date datavencimento;
+    private LocalDate dataVencimento;
     private boolean estado;
 
 }
