@@ -1,0 +1,1 @@
+SELECT * FROM pedidos WHERE cliente_id = 20;

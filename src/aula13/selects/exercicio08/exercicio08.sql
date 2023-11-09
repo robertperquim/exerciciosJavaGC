@@ -1,0 +1,1 @@
+SELECT ROUND((AVG(preco))::numeric, 2) AS media_precos_produtos FROM produtos

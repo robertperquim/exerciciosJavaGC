@@ -1,0 +1,1 @@
+SELECT * FROM pedidos WHERE valor_total > 100;
