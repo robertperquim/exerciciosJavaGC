@@ -1,0 +1,3 @@
+SELECT *
+FROM pedidos
+WHERE data_pedido BETWEEN '2023-11-01' AND '2023-12-31';
