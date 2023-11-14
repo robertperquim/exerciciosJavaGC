@@ -4,6 +4,6 @@ public record NinjaRegisterDate(
         String nome,
         String vila,
         boolean status,
-        Experiencia expericencia
+        Experiencia experiencia
 ) {
 }

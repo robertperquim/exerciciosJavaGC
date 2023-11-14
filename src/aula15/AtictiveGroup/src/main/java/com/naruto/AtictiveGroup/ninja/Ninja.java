@@ -25,7 +25,7 @@ public class Ninja {
          this.status = true;
          this.vila = data.vila();
          this.nome = data.nome();
-         this.experiencia = data.expericencia();
+         this.experiencia = data.experiencia();
 
      }
 }
